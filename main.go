@@ -38,7 +38,7 @@ func main() {
 	}
 
 	r := mux.NewRouter()
-	r.HandleFunc("/ws", handleWebsocket)
+	r.HandleFunc("/ws", handleWebsocket).Methods("GET")
 
 	http.ListenAndServe(bind, r)
 }
